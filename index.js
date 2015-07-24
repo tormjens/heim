@@ -21,6 +21,7 @@ var switches = require('./lib/routers/switch'); // switch router
 // respond with "hello world" when a GET request is made to the homepage
 app.use('/switch', switches);
 
+// start the server
 var server = app.listen(config.port, function () {
     var host = server.address().address;
     var port = server.address().port;

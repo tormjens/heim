@@ -1,16 +1,44 @@
 {
     "port": "3000",
-    "devices": {
+    "providers": {
         "milight": {
+            "type": "milight",
             "ip": "10.0.0.60",
             "port": 8899
         },
         "tellduslive": {
+            "type": "tellduslive",
             "public": "FEHUVEW84RAFR5SP22RABURUPHAFRUNU",
             "private": "ZUXEVEGA9USTAZEWRETHAQUBUR69U6EF",
             "token": "bb891cf799832105d6887e7dd8f89dcd053726e19",
             "secret": "479a6b7eeb5523f9ae6d575bfb1ee129"
         }
-    }
+    },
+    "devices": [
+        {
+            "name": "Office Lights",
+            "id": "1",
+            "provider": "milight",
+            "type": "switch"
+        },
+        {
+            "name": "Bedroom Lights",
+            "id": "4",
+            "provider": "milight",
+            "type": "switch"
+        },
+        {
+            "name": "Entrance Lights",
+            "id": "3",
+            "provider": "milight",
+            "type": "switch"
+        },
+        {
+            "name": "Living Room Lights",
+            "id": "2",
+            "provider": "milight",
+            "type": "switch"
+        }
+    ]
 
 }
