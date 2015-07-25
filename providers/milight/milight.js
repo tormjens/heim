@@ -19,7 +19,7 @@ module.exports = {
      * @return  {Object} Returns a WifiBoxModule-instance
      */
     client: function() {
-        return new WifiBoxModule(config.providers.milight.ip, config.providers.milight.port);
+        return new WifiBoxModule(config.get('providers:milight:ip'), config.get('providers:milight:port'));
     },
 
     /**
@@ -29,7 +29,7 @@ module.exports = {
      */
     on: function(id) {
         var result = this.client().command(cmd.white.on(id));
-        return result.error === 0;
+        return true;
     },
 
     /**
@@ -39,7 +39,7 @@ module.exports = {
      */
     off: function(id) {
         var result = this.client().command(cmd.white.off(id));
-        return result.error === 0;
+        return true;
 
     },
 

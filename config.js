@@ -1,6 +1,6 @@
-var fs = require('fs');
-var configuration = JSON.parse(
-    fs.readFileSync('./heim.json')
-);
+var nconf = require('nconf');
 
-module.exports = configuration;
+nconf.use('file', { file: './heim.json' });
+nconf.load();
+
+module.exports = nconf;

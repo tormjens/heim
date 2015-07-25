@@ -44,13 +44,14 @@ WifiBox.prototype.command = function (threeByteArray) {
         , this.port
         , this.ip
         , function (err, bytes) {
-            if (err) {
+            if (!!err) {
                 return { error: 1, response: err };
             } else {
                 return {error: 0, response: [ threeByteArray[0], threeByteArray[1], threeByteArray[2] ] };
             }
         }
     );
+    return;
 }
 
 WifiBox.prototype.toString = function () {

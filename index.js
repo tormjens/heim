@@ -27,8 +27,11 @@ app.use(express.static('assets'));
 
 // get routers
 var switches = require('./lib/routers/switch'); // switch router
-// get routers
-var devices = require('./lib/routers/device'); // switch router
+var devices = require('./lib/routers/device'); // device router
+var auth = require('./lib/login'); // login router
+
+// require login
+app.use(auth);
 
 // the switch route
 app.use('/switch', switches);
@@ -39,7 +42,7 @@ app.use('/devices', devices);
 // start the server
 console.log(colors.green('# '));
 console.log(colors.green('# ') + 'Starting http server');
-var server = app.listen(config.port, function () {
+var server = app.listen(config.get('port'), function () {
     var host = server.address().address;
     var port = server.address().port;
 
