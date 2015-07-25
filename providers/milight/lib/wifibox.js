@@ -45,10 +45,9 @@ WifiBox.prototype.command = function (threeByteArray) {
         , this.ip
         , function (err, bytes) {
             if (err) {
-                console.log("udp error:" + err);
-                throw err;
+                return { error: 1, response: err };
             } else {
-                console.log('bytes send: ' + [threeByteArray[0], threeByteArray[1], threeByteArray[2]])
+                return {error: 0, response: [ threeByteArray[0], threeByteArray[1], threeByteArray[2] ] };
             }
         }
     );

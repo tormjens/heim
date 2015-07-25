@@ -18,10 +18,10 @@ cloud = new TelldusAPI.TelldusAPI({
 }).login(token, tokenSecret, function(err, user) {
     if (!!err) return console.log('login error: ' + err.message);
 
-    console.log('Telldus API successfull.');
+    // console.log('Telldus API successfull.');
 
 }).on('error', function(err) {
-    console.log('Telldus API failed.');
+    // console.log('Telldus API failed.');
 });
 
 /**

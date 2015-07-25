@@ -29,7 +29,7 @@ module.exports = {
      */
     on: function(id) {
         var result = this.client().command(cmd.white.on(id));
-        return true;
+        return result.error === 0;
     },
 
     /**
@@ -39,7 +39,7 @@ module.exports = {
      */
     off: function(id) {
         var result = this.client().command(cmd.white.off(id));
-        return true;
+        return result.error === 0;
 
     },
 

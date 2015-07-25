@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.13.2",
+    "colors": "^1.1.2",
     "express": "^4.13.1",
     "oauth2-server": "^2.4.1",
     "telldus-live": "^0.2.1"
