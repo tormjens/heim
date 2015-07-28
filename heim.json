@@ -1,5 +1,6 @@
 {
   "port": "3000",
+  "timezone": "Europe/Oslo",
   "providers": {
     "milight": {
       "type": "milight",
@@ -20,35 +21,45 @@
       "id": "1",
       "provider": "milight",
       "type": "switch",
-      "endpoint": "/switch/milight/1"
+      "endpoint": "/switch/milight",
+      "state": 0,
+      "isToggled": false
     },
     {
       "name": "Bedroom Lights",
       "id": "4",
       "provider": "milight",
       "type": "switch",
-      "endpoint": "/switch/milight/4"
+      "endpoint": "/switch/milight",
+      "state": 1,
+      "isToggled": true
     },
     {
       "name": "Entrance Lights",
       "id": "3",
       "provider": "milight",
       "type": "switch",
-      "endpoint": "/switch/milight/3"
+      "endpoint": "/switch/milight",
+      "state": 0,
+      "isToggled": false
     },
     {
       "name": "Living Room Lights",
       "id": "2",
       "provider": "milight",
       "type": "switch",
-      "endpoint": "/switch/milight/2"
+      "endpoint": "/switch/milight",
+      "state": 0,
+      "isToggled": false
     },
     {
       "name": "Living Room Lights",
       "id": "2",
       "provider": "tellduslive",
       "type": "switch",
-      "endpoint": "/switch/tellduslive/2"
+      "endpoint": "/switch/tellduslive",
+      "state": 0,
+      "isToggled": false
     }
   ],
   "users": [
@@ -58,8 +69,67 @@
       "email": "tormorten@tormorten.no"
     }
   ],
+  "groups": [
+    {
+      "name": "Lights",
+      "devices": [
+        "milight_1",
+        "milight_2",
+        "milight_3",
+        "milight_4"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "description": "All lights on every day at 7:30",
+      "pattern": "0 30 7 * * *",
+      "action": "on",
+      "devices": [
+        "milight_1",
+        "milight_2",
+        "milight_3",
+        "milight_4"
+      ]
+    },
+    {
+      "description": "All lights off every day at 8:30",
+      "pattern": "00 30 8 * * *",
+      "action": "off",
+      "devices": [
+        "milight_1",
+        "milight_2",
+        "milight_3",
+        "milight_4"
+      ]
+    },
+    {
+      "description": "All lights on every day at 23:00",
+      "pattern": "0 0 23 * * *",
+      "action": "on",
+      "devices": [
+        "milight_1",
+        "milight_2",
+        "milight_3",
+        "milight_4"
+      ]
+    },
+    {
+      "description": "All lights off every day at 23:30",
+      "pattern": "0 30 23 * * *",
+      "action": "off",
+      "devices": [
+        "milight_1",
+        "milight_2",
+        "milight_3",
+        "milight_4"
+      ]
+    }
+  ],
   "states": {
     "milight_3": 0,
-    "milight_1": 1
+    "milight_1": 0,
+    "milight_4": 1,
+    "milight_2": 0
   }
 }

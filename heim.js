@@ -22,12 +22,23 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
 
+// load schedules (it is not dependant on the http server so it's usually loaded first)
+require('./lib/schedule');
+
+// allow cors
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 // set the asset directory
 app.use(express.static('assets'));
 
 // get routers
 var switches = require('./lib/routers/switch'); // switch router
 var devices = require('./lib/routers/device'); // device router
+var groups = require('./lib/routers/groups'); // groups router
 var auth = require('./lib/login'); // login router
 
 // require login
@@ -38,6 +49,9 @@ app.use('/switch', switches);
 
 // devices
 app.use('/devices', devices);
+
+// groups
+app.use('/groups', groups);
 
 // start the server
 console.log(colors.green('# '));

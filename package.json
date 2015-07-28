@@ -1,20 +1,21 @@
 {
-  "name": "heimwork",
+  "name": "heim.js",
   "version": "1.0.0",
   "description": "A home automation framework written in node.js",
-  "main": "index.js",
+  "main": "heim.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "basic-auth": "^1.0.3",
-    "body-parser": "^1.13.2",
-    "colors": "^1.1.2",
-    "express": "^4.13.1",
-    "nconf": "^0.7.1",
-    "oauth2-server": "^2.4.1",
-    "telldus-live": "^0.2.1"
+    "basic-auth": "1.0.3",
+    "body-parser": "1.13.2",
+    "colors": "1.1.2",
+    "cron": "^1.0.9",
+    "express": "4.13.1",
+    "nconf": "0.7.1",
+    "oauth2-server": "2.4.1",
+    "telldus-live": "0.2.1"
   }
 }
