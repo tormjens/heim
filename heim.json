@@ -127,9 +127,9 @@
     }
   ],
   "states": {
-    "milight_3": 0,
-    "milight_1": 0,
+    "milight_3": 1,
+    "milight_1": 1,
     "milight_4": 1,
-    "milight_2": 0
+    "milight_2": 1
   }
 }
